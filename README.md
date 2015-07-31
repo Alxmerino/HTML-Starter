@@ -5,12 +5,12 @@ $ npm install
 $ bower install
 ```
 
-This project uses Skeleton-sass (css grid system) which needs a quick setup to get it to work. On prompt enter `gtmsquared`.
+This project uses Skeleton-sass (css grid system) which needs a quick setup to get it to work. On prompt enter `PROJECT_NAME`.
 
 ```bash
 $ cd bower_components/skeleton-sass && bin/setup.rb
 ```
-Now open `_gtmsquared.config.scss` and add variables below to the end of the file
+Now open `_PROJECT_NAME.config.scss` and add variables below to the end of the file
 
 ```bash
 $is-fluid: true;
