@@ -9,16 +9,17 @@ var merge = require('merge-stream');
 
 var path = {
 	src: {
-		scss: 'scss',
-		js: 'js',
-		vendor: 'js/vendor',
-		img: 'img',
-		bower: 'bower_components'
+		scss: './src/scss',
+		js: './src/js',
+		vendor: './src/js/vendor',
+		img: './src/img',
+		bower: './src/bower_components'
+		node: './src/node_modules'
 	},
 	dest: {
-		css: 'css',
-		js: 'js',
-		img: 'img'
+		css: './assets/css',
+		js: './assets/js',
+		img: './assets/img'
 	}
 }
 
@@ -64,10 +65,10 @@ gulp.task('sass', function () {
  */
 gulp.task('compile_scripts', function() {
 	return gulp.src([
-			path.src.vendor + '/jquery-1.11.3.min.js',
-			path.src.vendor + '/modernizr-2.8.3.min.js',
-			path.src.bower + '/underscore/underscore.js',
-			path.src.bower + '/jquery-backstretch/jquery.backstretch.js'
+			// path.src.vendor + '/jquery-1.11.3.min.js',
+			// path.src.vendor + '/modernizr-2.8.3.min.js',
+			// path.src.bower + '/underscore/underscore.js',
+			// path.src.bower + '/jquery-backstretch/jquery.backstretch.js'
 		])
 		.pipe(concat('plugins.js'))
 		.pipe(uglify())
