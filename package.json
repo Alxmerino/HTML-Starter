@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/Alxmerino/HTML-Starter/issues"
   },
-  "homepage": "https://github.com/Alxmerino/HTML-Starter"
+  "homepage": "https://github.com/Alxmerino/HTML-Starter",
+  "dependencies": {
+    "jquery": "^2.2.0"
+  }
 }
