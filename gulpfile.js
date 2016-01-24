@@ -13,8 +13,8 @@ var path = {
 		js: './src/js',
 		vendor: './src/js/vendor',
 		img: './src/img',
-		bower: './src/bower_components'
-		node: './src/node_modules'
+		bower: './bower_components'
+		node: './node_modules'
 	},
 	dest: {
 		css: './assets/css',
@@ -65,10 +65,7 @@ gulp.task('sass', function () {
  */
 gulp.task('compile_scripts', function() {
 	return gulp.src([
-			// path.src.vendor + '/jquery-1.11.3.min.js',
-			// path.src.vendor + '/modernizr-2.8.3.min.js',
-			// path.src.bower + '/underscore/underscore.js',
-			// path.src.bower + '/jquery-backstretch/jquery.backstretch.js'
+			path.src.vendor + '/jquery/dist/jquery.js',
 		])
 		.pipe(concat('plugins.js'))
 		.pipe(uglify())
