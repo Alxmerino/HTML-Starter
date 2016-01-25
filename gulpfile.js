@@ -1,11 +1,13 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var runSequence = require('run-sequence');
-var spritesmith = require('gulp.spritesmith');
-var merge = require('merge-stream');
+var gulp 		 	= require('gulp');
+var sass 		 	= require('gulp-sass');
+var autoprefixer 	= require('gulp-autoprefixer');
+var concat 		 	= require('gulp-concat');
+var uglify 		 	= require('gulp-uglify');
+var runSequence  	= require('run-sequence');
+var spritesmith  	= require('gulp.spritesmith');
+var imagemin 	 	= require('gulp-imagemin');
+var pngquant 	 	= require('imagemin-pngquant');
+var merge 			= require('merge-stream');
 
 var path = {
 	src: {
@@ -126,6 +128,19 @@ gulp.task('sprite', function () {
 });
 
 /**
+ * Image Optimizer
+ */
+gulp.task('imagemin', function() {
+	return gulp.src(path.src.img + '/*')
+		.pipe(imagemin({
+			progressive: true,
+			sgvoPlugins: [{removeViewBox: false}],
+			use: [pngquant()]
+		}))
+		pipe(gulp.dest.(path.dest.img));
+});
+
+/**
  * Cache breaker task
  */
 
@@ -133,5 +148,5 @@ gulp.task('sprite', function () {
  * Default task
  */
 gulp.task('default', function() {
-	runSequence('sprite', 'sass', 'compile_scripts', 'main_js')
+	runSequence('sprite', 'imagemin', 'sass', 'compile_scripts', 'main_js');
 });
