@@ -15,7 +15,7 @@ var path = {
 		js: './src/js',
 		vendor: './src/js/vendor',
 		img: './src/img',
-		bower: './bower_components'
+		bower: './bower_components',
 		node: './node_modules'
 	},
 	dest: {
@@ -137,7 +137,7 @@ gulp.task('imagemin', function() {
 			sgvoPlugins: [{removeViewBox: false}],
 			use: [pngquant()]
 		}))
-		pipe(gulp.dest.(path.dest.img));
+		.pipe(gulp.dest(path.dest.img + '/'));
 });
 
 /**
