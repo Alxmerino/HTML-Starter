@@ -10,3 +10,7 @@ $ npm install
 You can now run `gulp watch` for development or just `gulp` for production.
 
 Happy coding!
+
+
+SETUP A CONFIG JSON
+WORK WITH NPM SCRIPTS https://docs.npmjs.com/misc/scripts
