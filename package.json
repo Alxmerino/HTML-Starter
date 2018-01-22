@@ -29,6 +29,6 @@
   },
   "homepage": "https://github.com/Alxmerino/HTML-Starter",
   "dependencies": {
-    "jquery": "^2.2.0"
+    "jquery": "^3.0.0"
   }
 }
